@@ -1,5 +1,5 @@
 - name: Install helm via curl
-  shell: curl -opa https://git.io/get_helm.sh | bash -
+  shell: curl -L https://git.io/get_helm.sh | bash -
   register: helm_result
 
 - name: Helm init
@@ -7,7 +7,7 @@
   register: helm_init_result
 
 - name: Create service account to tiller
-  shell: kubectl create serviceaccount tiller
+  shell: kubectl create serviceaccount --namespace=kube-system tiller
   register: tiller_result
 
 - name: Create clusterrolebinding for tiller
