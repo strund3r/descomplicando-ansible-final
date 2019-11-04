@@ -3,5 +3,5 @@
   register: prometheus_result
 
 - name: Install Grafana
-  shell: helm install {{ deploy-grafana }}
+  shell: helm install {{ deploy_grafana }}
   register: grafana_result
